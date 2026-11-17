@@ -5,20 +5,21 @@ import './Projects.css'
 const projects = [
   {
     title: 'Phishing Detection (URL-Based)',
+    tech: 'Python · Scikit-learn · Random Forest · ML',
     highlights: [
-      'Feature Extraction: Analyzed URL features like domain length, special characters, and HTTPS usage for better detection accuracy.',
-      'Model Performance: Achieved high accuracy with Random Forest and Logistic Regression after fine-tuning.',
-      'Real-time Detection: Implemented real-time URL scanning for phishing detection.',
-      'Model Deployment: Deployed the phishing detection model to analyze URLs on a larger scale.',
+      'Developed lexical and structural feature extraction pipelines to analyze domain length, special characters, and HTTPS usage for URL classification.',
+      'Trained and evaluated Random Forest and Logistic Regression classifiers for phishing URL detection.',
+      'Implemented an automated URL scanning mechanism for identifying potentially malicious and phishing URLs.',
+      'Deployed the machine learning model to support batch processing and API-based URL analysis.',
     ],
   },
   {
     title: 'AI-Based Plant Detection System',
+    tech: 'Python · TensorFlow · Keras · CNN',
     highlights: [
-      'Model Training: Trained a CNN model for plant species classification using labeled plant image datasets.',
-      'User Interface: Developed a simple interface for real-time plant recognition and information display.',
-      'Cross-Platform: Ensured the system was compatible with both mobile and web platforms.',
-      'Real-time Accuracy: Provided near-instant identification of plants with relevant data and care tips.',
+      'Trained a Convolutional Neural Network (CNN) using labeled botanical datasets for multi-class plant species classification.',
+      'Developed a responsive cross-platform user interface for accessing plant identification functionality across mobile and web environments.',
+      'Integrated CNN-based predictions into the application to identify plant species and provide relevant plant care recommendations.',
     ],
   },
 ]
@@ -38,6 +39,7 @@ export default function Projects({ id, onInView }) {
             transition={{ duration: 0.4, delay: index * 0.1 }}
           >
             <h3 className="card-title">{project.title}</h3>
+            <p className="card-meta">{project.tech}</p>
             <ul>
               {project.highlights.map((item, i) => (
                 <li key={i}>{item}</li>

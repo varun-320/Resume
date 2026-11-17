@@ -4,16 +4,19 @@ import './Activities.css'
 
 const activities = [
   {
-    title: 'Python Hands-on Workshop',
-    desc: 'Participated in a practical Python programming workshop at Canara Engineering College, Mangalore, gaining hands-on experience with core concepts and real-time problem solving.',
+    title: 'Entrepreneurial Leadership Program',
+    meta: 'Innovation Council, Canara Engineering College · 2024 · Mangalore, Karnataka',
+    desc: 'Completed leadership training focused on innovation, product thinking, and collaborative problem-solving.',
   },
   {
     title: 'DSA December – Virtual Coding Challenge',
-    desc: 'Actively took part in "DSA December", a virtual coding challenge organized by the Coding Club of CEC, enhancing skills in data structures and algorithms.',
+    meta: 'Coding Club, CEC · Dec 2023 · Online',
+    desc: 'Participated in a month-long coding challenge, solving daily problems focused on data structures, algorithms, and time and space complexity.',
   },
   {
-    title: 'Entrepreneurial Leadership Program',
-    desc: 'Participated in the Entrepreneurial Leadership program conducted by the Innovation Council at Canara Engineering College, fostering leadership and innovation mindset.',
+    title: 'Python Hands-on Workshop',
+    meta: 'Canara Engineering College · Oct 2023 · Mangalore, Karnataka',
+    desc: 'Participated in a practical workshop covering Python fundamentals, data structures, and algorithmic problem-solving.',
   },
 ]
 
@@ -32,6 +35,7 @@ export default function Activities({ id, onInView }) {
             transition={{ duration: 0.4, delay: index * 0.08 }}
           >
             <h3 className="card-title">{item.title}</h3>
+            <p className="card-meta">{item.meta}</p>
             <p className="card-description">{item.desc}</p>
           </motion.article>
         ))}

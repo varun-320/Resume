@@ -4,24 +4,41 @@ import './Skills.css'
 
 const skillGroups = [
   {
-    label: 'Languages',
-    items: ['Java', 'Python', 'JavaScript', 'C/C++'],
+    label: 'Programming Languages',
+    items: ['Java', 'Python', 'JavaScript', 'C', 'PHP'],
   },
   {
-    label: 'Web Technologies',
-    items: ['HTML5', 'CSS3', 'React.js', 'Node.js', 'Express.js', 'Next.js', 'Angular.js'],
+    label: 'Frontend Technologies',
+    items: ['HTML5', 'CSS3', 'React.js', 'Next.js', 'Angular', 'Preact'],
+  },
+  {
+    label: 'Backend Technologies',
+    items: ['Node.js', 'Express.js', 'Laravel'],
   },
   {
     label: 'Databases',
-    items: ['MongoDB', 'Mongoose (ODM)'],
+    items: ['MongoDB', 'Mongoose', 'SQL'],
+  },
+  {
+    label: 'Cloud & Deployment',
+    items: ['AWS', 'Salesforce', 'Netlify', 'Render'],
   },
   {
     label: 'Tools & Platforms',
-    items: ['Git', 'GitHub', 'Postman', 'VS Code', 'Chrome DevTools', 'Netlify', 'Render', 'AWS', 'Linux'],
+    items: ['Git', 'GitHub', 'Postman', 'VS Code', 'Chrome DevTools', 'Linux'],
   },
   {
-    label: 'Concepts',
-    items: ['RESTful APIs', 'Deployment', 'Client-Side Debugging', 'Agile', 'Authentication', 'UI/UX Basics', 'Git Branching', 'CORS', 'Middleware', 'JWT', 'OAuth2'],
+    label: 'Core Concepts',
+    items: [
+      'RESTful APIs',
+      'JWT',
+      'OAuth 2.0',
+      'Middleware',
+      'CORS',
+      'Authentication',
+      'Agile Methodology',
+      'Git Branching',
+    ],
   },
 ]
 

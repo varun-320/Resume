@@ -33,3 +33,9 @@
   background: rgba(14, 165, 233, 0.2);
   border-color: var(--accent);
 }
+
+@media (min-width: 600px) {
+  .skill-group:last-child {
+    grid-column: 1 / -1;
+  }
+}
