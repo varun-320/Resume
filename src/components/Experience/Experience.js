@@ -2,54 +2,80 @@ import { motion } from 'framer-motion'
 import Section from '../Section/Section'
 import './Experience.css'
 
-const experience = {
-  role: 'MERN Stack Intern',
-  company: 'Dregali Pvt. Ltd.',
-  period: 'Feb 2025 – May 2025',
-  title: 'E-commerce Web App (Amazon-like)',
-  points: [
-    'Developed an Amazon-like e-commerce platform using MERN stack.',
-    'Implemented user authentication, product listings, cart, wishlist, multi-vendor support, admin panel, and real-time order tracking.',
-    'Integrated Cloudinary for image uploads.',
-    'Added product reviews and ratings with moderation system.',
-    'Built responsive UI using Tailwind CSS and React Router for smooth navigation.',
-    'Deployed frontend on Netlify and backend on Render with environment-based config.',
-  ],
-  link: 'https://mern-stack-projects.netlify.app/',
-}
+const experiences = [
+  {
+    role: 'Software Developer',
+    company: 'Dregali Pvt. Ltd.',
+    location: 'Onsite / Mangalore, Karnataka',
+    period: 'Jun 2026 – Nov 2026',
+    title: 'Internal CRM & Automated Messaging Pipeline',
+    points: [
+      'Building and customizing internal CRM modules using Laravel, Preact, and SQL.',
+      'Developed an automated WhatsApp messaging pipeline to deliver notifications and transactional messages.',
+      'Developing and maintaining full-stack applications using the MERN stack and modern web technologies.',
+      'Performed Manual and Automated testing across APIs and web modules to ensure reliability, bug-free deployments, and consistent user workflows.',
+    ],
+  },
+  {
+    role: 'Full Stack Intern',
+    company: 'Dregali Pvt. Ltd.',
+    location: 'Onsite / Mangalore, Karnataka',
+    period: 'Feb 2025 – May 2025',
+    title: 'Multi-Vendor E-Commerce Platform',
+    points: [
+      'Built a full-stack multi-vendor e-commerce platform using the MERN stack, featuring product listings, shopping cart, and order management.',
+      'Implemented JWT-based authentication, multi-vendor functionality, admin dashboard, cart, wishlist, and real-time order tracking.',
+      'Integrated Cloudinary for media storage and implemented a user review and rating moderation workflow.',
+      'Designed responsive user interfaces using Tailwind CSS and React Router for seamless client-side navigation.',
+      'Deployed the frontend on Netlify and backend on Render with environment-based configurations.',
+    ],
+    link: 'https://mern-stack-projects.netlify.app/',
+  },
+]
 
 export default function Experience({ id, onInView }) {
   return (
     <Section id={id} onInView={onInView}>
       <h2 className="section-title">Experience</h2>
-      <motion.article
-        className="exp-card card"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-      >
-        <div className="exp-header">
-          <div>
-            <h3 className="card-title">{experience.title}</h3>
-            <p className="card-subtitle">{experience.role} · {experience.company}</p>
-            <p className="card-meta">{experience.period}</p>
-          </div>
-          <a
-            href={experience.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-button"
+      <div className="experience-list">
+        {experiences.map((exp, index) => (
+          <motion.article
+            key={index}
+            className="exp-card card"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
           >
-            View Live
-          </a>
-        </div>
-        <ul>
-          {experience.points.map((point, i) => (
-            <li key={i}>{point}</li>
-          ))}
-        </ul>
-      </motion.article>
+            <div className="exp-header">
+              <div>
+                <h3 className="card-title">{exp.role}</h3>
+                <p className="card-subtitle">
+                  {exp.company} · {exp.title}
+                </p>
+                <p className="card-meta">
+                  {exp.period} · {exp.location}
+                </p>
+              </div>
+              {exp.link && (
+                <a
+                  href={exp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-button"
+                >
+                  View Live
+                </a>
+              )}
+            </div>
+            <ul>
+              {exp.points.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
+          </motion.article>
+        ))}
+      </div>
     </Section>
   )
 }
